@@ -8,7 +8,13 @@ struct Node {
   Node *left;
   Node *right;
   uint32_t data;    // will be change ltr ,no neccessary integer
+};
 
+typedef struct StringNode StringNode;
+struct StringNode {
+  StringNode *left;
+  StringNode *right;
+  char *data;
 };
 
 
