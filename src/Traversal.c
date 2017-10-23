@@ -10,10 +10,26 @@ void _inOrderTreeTraversal(Node *node,void (*print)(Node *node)) {    // _ mean 
     _inOrderTreeTraversal(node->right,print);
 }
 
+void _PostOrderTreeTraversal(Node *node,void (*print)(Node *node)) {
+  if(node->left != NULL)
+    _PostOrderTreeTraversal(node->left,print);
+  if(node->right != NULL)
+    _PostOrderTreeTraversal(node->right,print);
+  print(node);
+}
+
+void _PreOrderTreeTraversal(Node *node,void (*print)(Node *node)) {
+  print(node);
+  if(node->left != NULL)
+    _PreOrderTreeTraversal(node->left,print);
+  if(node->right != NULL)
+    _PreOrderTreeTraversal(node->right,print);
+}
+
 void inOrderTreeTraversal(Node *node) {
   if(node->left != NULL)
     inOrderTreeTraversal(node->left);
-  printf("%d ,", node->data);
+    printf("%d ,", node->data);
   if(node->right != NULL)
     inOrderTreeTraversal(node->right);
 }
